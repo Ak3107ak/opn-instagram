@@ -1,2 +1,0 @@
-drop tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BLOCK INSTAGRAM TLS"; flow:to_server,established; tls.sni; content:".instagram.com"; endswith; nocase; sid:9100001; rev:3;)
-drop dns $HOME_NET any -> $EXTERNAL_NET any (msg:"BLOCK INSTAGRAM DNS"; dns.query; content:"instagram.com"; nocase; endswith; sid:9100101; rev:3;)
